@@ -13,10 +13,16 @@ def read_names():
     while True:
         name = raw_input("Enter your name: ")
         if name==leave:
+            print names
             print "Leaving now, GoodBye !!!"
             exit()
         else:
+            name.upper()
+            names.sort()
             names.append(name)
-            print names[0], len(name), len(names)
-read_names()
+            print names
+            names.reverse()
+            print names
 
+        #print "length of name is:", len(name), "length of list is: ", len(names), names
+read_names()
