@@ -22,7 +22,9 @@ def read_names():
             names.append(name)
             print names
             names.reverse()
+            #sorted_names=names.sorted(names)
             print names
+            #print sorted_names
 
         #print "length of name is:", len(name), "length of list is: ", len(names), names
 read_names()

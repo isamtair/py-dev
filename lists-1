@@ -1,0 +1,26 @@
+#Learning Python lists-1
+
+import sys
+from os import path
+
+#Create a test class
+
+class Employee():
+    def __init__(self, name, age, salary):
+        self.name= name
+        self.age= age
+        self.salary= salary
+    def __repr__(self):
+        return '{},{},${}'.format(self.name, self.age, self.salary)
+e1= Employee('Isam', 49, 100)
+e2= Employee('David', 44, 190)
+e3= Employee('Amit', 34, 399)
+
+#Create a lisy
+employees= [e1, e2, e3]
+
+#Create a funtion to sort and return
+def e_sort(emp):
+    return emp.salary
+s_employees= sorted(employees, key=e_sort)
+print (s_employees)
