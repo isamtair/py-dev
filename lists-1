@@ -4,7 +4,7 @@ import sys
 from os import path
 
 #Create a test class
-
+print ("Hello There. This is a demo about a class")
 class Employee():
     def __init__(self, name, age, salary):
         self.name= name
