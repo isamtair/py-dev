@@ -1,0 +1,48 @@
+import csv
+
+"""""""""
+def reg_open():
+    with open('c:\users\\isam\\desktop\\1.csv') as csv_file:
+        this_list = list(csv_file)
+        print this_list
+        csv_file.close()
+reg_open()
+"""""
+
+def csv_read_locations():
+    row_number=1
+    locations_52501=[]
+    locations_52801=[]
+    locations_52901=[]
+    other_locations=[]
+
+    try:
+        csv_file = open("c:\\users\\isam\\desktop\\ml_cdr_data_2016_02_24_05_00.csv")
+        #csv_file = open("c:\\users\\isam\\desktop\\1.csv")
+        csv_reader = csv.reader(csv_file, delimiter=';')
+        next(csv_file)
+        for row in csv_reader:
+            TS, ID, Date, Location, zipCode, priority = row
+            # print row_number, " ", (TS, ID, Date, Location, zipCode, priority)
+            if Location == '52501':
+                locations_52501.append(row_number)
+            elif Location == '52801':
+                #print row_number," ", Location
+                locations_52801.append(row_number)
+            elif Location=='52901':
+                locations_52901.append(row_number)
+            else:
+                other_locations.append(row_number)
+            row_number += 1
+        csv_file.close()
+        print "Locations with 52501:",  len(locations_52501)
+        print "Locations with 52801:",  len(locations_52801)
+        print "Locations with 52901:",  len(locations_52901)
+        print "Locations with other locations:", len(other_locations)
+        print "Sum of all locations: ", len(locations_52501)+len(locations_52801)+len(locations_52901)+ len(other_locations)
+        print "Total number of lines in file:", row_number
+
+
+    except:
+        print "Ops"
+csv_read_locations()
