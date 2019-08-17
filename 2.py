@@ -2,7 +2,7 @@
 import sys
 from os import path
 
-print ("Hi 1")
+print ("Hi 2")
 print "Lets see what names you have in mind"
 
 
